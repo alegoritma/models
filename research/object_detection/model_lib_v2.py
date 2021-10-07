@@ -596,7 +596,7 @@ def train_loop(
       summary_writer_filepath)
 
   eval_summary_writer = tf.compat.v2.summary.create_file_writer(
-      os.path.join(model_dir, 'eval', eval_input_config.name))
+      os.path.join(model_dir, 'eval'))
   with summary_writer.as_default():
     with strategy.scope():
       with tf.compat.v2.summary.record_if(
